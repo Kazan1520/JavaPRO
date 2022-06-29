@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link th:href="@{/css/output.css}" rel="stylesheet">
+    <title>Rejestracja</title>
+</head>
+<body>
+<div th:insert="navbar"></div>
+<span th:if="${registerFailed}">
+  <div class="flex items-center justify-center bg-gray-100">
+  <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+    <h3 class="text-2xl font-bold text-center">Błędne dane</h3>
+  </div>
+  </div>
+</span>
+<span th:if="${passwordDoesNotMatch}">
+  <div class="flex items-center justify-center bg-gray-100">
+  <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+    <h3 class="text-2xl font-bold text-center">Hasła się nie zgadzają</h3>
+  </div>
+  </div>
+</span>
+<div class="flex items-center justify-center bg-gray-100">
+  <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+    <h3 class="text-2xl font-bold text-center">Zarejestruj się</h3>
+    <form th:action="@{/register}" method="post" class="w-1/2 mx-auto">
+      <div class="shadow sm:rounded-md">
+        <div class="px-4 py-5 bg-white sm:p-6 rounded-2xl">
+          <div>
+          <label class="block" for="Username">Nazwa użytkownika</label>
+            <input type="text" placeholder="Nazwa użytkownika" id="Username" name="Username"
+                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label class="block" for="Email">Email</label>
+            <input type="email" placeholder="Email" id="Email" name="Email"
+                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label class="block" for="FirstName">Imię</label>
+          <input type="text" placeholder="Imię" id="FirstName" name="FirstName"
+                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label class="block" for="LastName">Nazwisko</label>
+          <input type="text" placeholder="Nazwisko" id="LastName" name="LastName"
+                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label class="block" for="IndexNumber">Numer Indeksu</label>
+          <input type="number" placeholder="Numer indeksu" id="IndexNumber" name="IndexNumber"
+                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label for="Password" class="block">Hasło</label>
+            <input type="password" placeholder="Hasło" id="Password" name="Password"
+                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="mt-4">
+          <label class="block">Powtórz Hasło</label>
+            <input type="password" placeholder="Powtórz Hasło" name="Password2"
+                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+        <div class="flex">
+          <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-gray-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Stwórz Konto</button>
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

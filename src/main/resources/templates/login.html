@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/output.css}" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+<div th:insert="navbar"></div>
+<span th:if="${registerSuccessful}">
+    <div class="flex items-center justify-center bg-gray-100">
+  <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+    <h3 class="text-2xl font-bold text-center">Rejestracja przebiegła pomyślnie</h3>
+  </div>
+  </div>
+</span>
+<div class="flex items-center justify-center bg-gray-100">
+    <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+        <h3 class="text-2xl font-bold text-center">Zaloguj się</h3>
+        <form th:action="@{/login}" method="post" class="w-1/2 mx-auto">
+            <div class="shadow sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6 rounded-2xl">
+                    <div>
+                        <label class="block" for="Username">Nazwa użytkownika</label>
+                        <input type="text" placeholder="Nazwa użytkownika" id="Username" name="username"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="mt-4">
+                        <label for="Password" class="block">Hasło</label>
+                        <input type="password" placeholder="Hasło" id="Password" name="password"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="flex">
+                        <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-gray-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Zaloguj się</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+</div>
+</body>
+</html>

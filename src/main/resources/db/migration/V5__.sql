@@ -1,0 +1,1 @@
+INSERT INTO public.user (username, email, password, role_id) VALUES ('admin', 'admin@admin.admin', '$2a$10$Iyjy33xEzpsuwnlZUG0RL.PkLqZHcV6UB7PEhfFTc9dqG6lr8gip.', 2);

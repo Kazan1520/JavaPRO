@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konto Użytkownika</title>
+</head>
+<body>
+<div th:insert="navbar"></div>
+<div class="flex items-center justify-center bg-gray-100">
+    <div class="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/2 lg:w-1/2 sm:w-1/2">
+        <h3 class="text-2xl font-bold text-center">Konto Użytkownika</h3>
+        <table class="w-1/2 mx-auto">
+            <div class="shadow sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6 rounded-2xl">
+                    <div>
+                        <div class="block">Nazwa użytkownika</div>
+                        <div th:text="${student.getUser().getUsername()}"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="mt-4">
+                        <div class="block">Email</div>
+                        <div th:text="${student.getUser().getEmail()}"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="mt-4">
+                        <div class="block">Imię</div>
+                        <div th:text="${student.getFirstName()}"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="mt-4">
+                        <div class="block">Nazwisko</div>
+                        <div th:text="${student.getLastName()}"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div class="mt-4">
+                        <div class="block">Numer Indeksu</div>
+                        <div th:text="${student.getIndexNumber()}"
+                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+            </div>
+        </table>
+    </div>
+</div>
+</body>
+</html>

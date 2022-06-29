@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl"   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body><!-- This example requires Tailwind CSS v2.0+ -->
+<nav class="bg-gray-400 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="display: inline">
+        <div class="flex justify-between h-16">
+            <div class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium justify-center" style="vertical-align: middle;">
+                <div  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/}" aria-current="page">Strona domowa</a>
+                </div>
+                <div  sec:authorize="!isAuthenticated()"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/login}">Login</a>
+                </div>
+                <div sec:authorize="!isAuthenticated()"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/register}">Rejestracja</a>
+                </div>
+                <div sec:authorize="isAuthenticated()"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/projects}">Tematy Projektów</a>
+                </div>
+                <div sec:authorize="isAuthenticated()" th:if="${user}"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/userprojects}">Twoje Projekty</a>
+                </div>
+                <div sec:authorize="isAuthenticated()" th:if="${admin}"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/adminTakenProjects}">Projekty Studentów</a>
+                </div>
+                <div sec:authorize="isAuthenticated()" th:if="${user}"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a th:href="@{/account}">Konto Użytkownika</a>
+                </div>
+                <div sec:authorize="isAuthenticated()"  class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
+                    <a th:href="@{/logout}">Wyloguj</a>
+                </div>
+            </div>
+    </div>
+    </div>
+</nav>
+</body>
+</html>
