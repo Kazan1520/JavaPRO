@@ -81,7 +81,10 @@ public class ProjectTopicService {
                     .deadline(projectTopic.getDeadline())
                     .build();
             takenProjectService.createTakenProject(takenProject);
-            if (projectTopic.getTakenProjects().size() - 1 >= projectTopic.getMultipleMaxCount()) {
+            System.out.println(projectTopic.getTakenProjects().size());
+            System.out.println(projectTopic.getMultipleMaxCount());
+            if (projectTopic.getTakenProjects().size() + 1 >= projectTopic.getMultipleMaxCount()) {
+                System.out.println("reserved");
                 projectTopic.setReserved(true);
             }
             }

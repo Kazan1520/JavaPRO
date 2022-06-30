@@ -33,7 +33,7 @@ public class StudentService {
     }
 
     public Student getStudentByUsername(String username) {
-        return studentRepository.findByUsersUsername(username);
+        return studentRepository.findByUser_Username(username);
     }
 
     public Student getStudent(Long id){
